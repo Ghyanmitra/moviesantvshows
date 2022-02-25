@@ -4,7 +4,7 @@ import { API_KEY } from "../app/constant";
 export const moviesAndShowsApi = createApi({
   reducerPath: "moviesAndShows",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://api.themoviedb.org/3/",
+    baseUrl: "http://api.themoviedb.org/3/",
   }),
   endpoints: (builder) => ({
     getMoviesAndTVShows: builder.mutation({
