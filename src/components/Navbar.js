@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ theme, setTheme }) {
   const [search, setSearch] = useState("");
-  const [theme, setTheme] = useState("dark");
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
