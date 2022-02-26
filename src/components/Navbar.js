@@ -9,13 +9,23 @@ function Navbar({ theme, setTheme }) {
     alert(search);
   };
 
+  const handleThemeClick = () => {
+    if (theme === "dark") {
+      setTheme("light");
+      localStorage.setItem("theme", "light");
+    } else {
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
+    }
+  };
+
   return (
     <>
       {/* navbar-dark bg-dark */}
       <nav
         className={`navbar navbar-expand-lg navbar-${
-          theme === "dark" ? "light" : "dark"
-        } bg-${theme === "dark" ? "light" : "dark"}`}
+          theme === "dark" ? "dark" : "light"
+        } bg-${theme === "dark" ? "dark" : "light"}`}
       >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
@@ -90,7 +100,7 @@ function Navbar({ theme, setTheme }) {
                 />
                 <button
                   className={`btn btn-outline-${
-                    theme === "dark" ? "dark" : "light"
+                    theme === "dark" ? "light" : "dark"
                   }`}
                   type="submit"
                 >
@@ -98,11 +108,11 @@ function Navbar({ theme, setTheme }) {
                 </button>
               </form>
               <button
-                className={`btn ms-2 btn-${theme}`}
+                className={`btn ms-2 btn-${
+                  theme === "dark" ? "light" : "dark"
+                }`}
                 type="submit"
-                onClick={() => {
-                  theme === "dark" ? setTheme("light") : setTheme("dark");
-                }}
+                onClick={handleThemeClick}
               >
                 Theme
               </button>

@@ -9,7 +9,13 @@ import TVShows from "./components/TVShows";
 import { useState } from "react";
 
 function App() {
-  const [theme, setTheme] = useState("dark");
+  const getTheme = localStorage.getItem("theme");
+
+  if (getTheme === null) {
+    localStorage.setItem("theme", "dark");
+  }
+
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
   return (
     <>
@@ -17,7 +23,7 @@ function App() {
 
       <div
         className={`bg-${
-          theme === "dark" ? "light text-dark" : "dark text-white"
+          theme === "dark" ? "dark text-white" : "light text-dark"
         } `}
       >
         <Routes>

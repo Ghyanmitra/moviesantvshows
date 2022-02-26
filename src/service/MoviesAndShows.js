@@ -9,9 +9,9 @@ export const moviesAndShowsApi = createApi({
   endpoints: (builder) => ({
     getMoviesAndTVShows: builder.mutation({
       query: ({ type, category, pageNo }) => {
-        console.log(
-          `${type}/${category}/?api_key=${API_KEY}&language=en-US&page=${pageNo}`
-        );
+        // console.log(
+        //   `${type}/${category}/?api_key=${API_KEY}&language=en-US&page=${pageNo}`
+        // );
         return {
           url: `${type}/${category}/?api_key=${API_KEY}&language=en-US&page=${pageNo}`,
           method: "GET",
